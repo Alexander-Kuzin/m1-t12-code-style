@@ -7,18 +7,20 @@ public class DepositCalculator {
     }
 
     void handleUserInput() {
+        int amount;
         int yearCount;
         int depositType;
         double yearRate = 0.06;
+        double finalResult = 0.0;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите сумму вклада в рублях:");
-        int amount = scanner.nextInt();
+        amount = scanner.nextInt();
         System.out.println("Введите срок вклада в годах:");
         yearCount = scanner.nextInt();
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
         depositType = scanner.nextInt();
-        double finalResult = 0;
+
         if (depositType == 1) {
             finalResult = calculateSimplePercent(amount, yearRate, yearCount);
         } else if (depositType == 2) {
